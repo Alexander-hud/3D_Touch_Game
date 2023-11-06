@@ -16,6 +16,7 @@
 		794A9A2F2AF6C2E90000E7BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 794A9A2E2AF6C2E90000E7BC /* Assets.xcassets */; };
 		794A9A322AF6C2E90000E7BC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 794A9A302AF6C2E90000E7BC /* LaunchScreen.storyboard */; };
 		794A9A392AF6C6440000E7BC /* GamwElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794A9A382AF6C6440000E7BC /* GamwElements.swift */; };
+		794A9A3D2AF983190000E7BC /* GameOverScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794A9A3C2AF983190000E7BC /* GameOverScene.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		794A9A2E2AF6C2E90000E7BC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		794A9A312AF6C2E90000E7BC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		794A9A382AF6C6440000E7BC /* GamwElements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamwElements.swift; sourceTree = "<group>"; };
+		794A9A3C2AF983190000E7BC /* GameOverScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverScene.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 				794A9A232AF6C2E70000E7BC /* GameScene.sks */,
 				794A9A252AF6C2E70000E7BC /* Actions.sks */,
 				794A9A272AF6C2E70000E7BC /* GameScene.swift */,
+				794A9A3C2AF983190000E7BC /* GameOverScene.swift */,
 				794A9A382AF6C6440000E7BC /* GamwElements.swift */,
 				794A9A292AF6C2E70000E7BC /* GameViewController.swift */,
 				794A9A2B2AF6C2E70000E7BC /* Main.storyboard */,
@@ -147,6 +150,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				794A9A3D2AF983190000E7BC /* GameOverScene.swift in Sources */,
 				794A9A282AF6C2E70000E7BC /* GameScene.swift in Sources */,
 				794A9A2A2AF6C2E70000E7BC /* GameViewController.swift in Sources */,
 				794A9A392AF6C6440000E7BC /* GamwElements.swift in Sources */,
@@ -308,8 +312,8 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UIStatusBarHidden = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -336,8 +340,8 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UIStatusBarHidden = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
