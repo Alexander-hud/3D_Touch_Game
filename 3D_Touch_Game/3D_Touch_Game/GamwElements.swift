@@ -88,7 +88,7 @@ extension GameScene {
     func addMovement (obstacle: SKSpriteNode) {
         var actionArray = [SKAction]()
         
-        actionArray.append(SKAction.move(to: CGPoint(x: obstacle.position.x , y: -obstacle.size.height), duration: TimeInterval(3)))
+        actionArray.append(SKAction.move(to: CGPoint(x: obstacle.position.x , y: -obstacle.position.y), duration: TimeInterval(3)))
         actionArray.append(SKAction.removeFromParent())
         
         obstacle.run(SKAction.sequence(actionArray))
@@ -100,19 +100,19 @@ extension GameScene {
         switch type {
         case .oneS:
             let obst = addObstacle(type: .Small)
-            obst.position = CGPoint(x: self.size.width / 2, y: obst.position.y)
+            obst.position = CGPoint(x: self.size.width / 50, y: obst.position.y)
             addMovement(obstacle: obst)
             addChild(obst)
             break
         case .oneM:
             let obst = addObstacle(type: .Medium)
-            obst.position = CGPoint(x: self.size.width / 2, y: obst.position.y)
+            obst.position = CGPoint(x: self.size.width / 50, y: obst.position.y)
             addMovement(obstacle: obst)
             addChild(obst)
             break
         case .oneL:
             let obst = addObstacle(type: .Large)
-            obst.position = CGPoint(x: self.size.width / 2, y: obst.position.y)
+            obst.position = CGPoint(x: self.size.width / 50, y: obst.position.y)
             addMovement(obstacle: obst)
             addChild(obst)
             break
@@ -148,9 +148,9 @@ extension GameScene {
             let obst2 = addObstacle(type: .Small)
             let obst3 = addObstacle(type: .Small)
             
-            obst1.position = CGPoint(x: obst1.size.width / 2 + 50, y: obst1.position.y) // left
-            obst2.position = CGPoint(x: self.size.width - obst2.size.width / 2 - 50, y: obst1.position.y) // right
-            obst3.position = CGPoint(x: self.size.width / 2 + 50, y: obst1.position.y) // center
+            obst1.position = CGPoint(x: self.size.width / 50  - 150 - obst1.size.width , y: obst1.position.y) // left
+            obst2.position = CGPoint(x: self.size.width / 50 + 150 + obst2.size.width, y: obst1.position.y) // right
+            obst3.position = CGPoint(x: self.size.width / 50 , y: obst1.position.y) // center
             
             addMovement(obstacle: obst1)
             addMovement(obstacle: obst2)
