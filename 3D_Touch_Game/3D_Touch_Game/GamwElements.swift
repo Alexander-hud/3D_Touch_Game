@@ -120,8 +120,8 @@ extension GameScene {
             let obst1 = addObstacle(type: .Small)
             let obst2 = addObstacle(type: .Small)
             
-            obst1.position = CGPoint(x: obst1.size.width / 50   + obst1.size.width, y: obst1.position.y)
-            obst2.position = CGPoint(x: self.size.width / 50 - obst2.size.width / 2 - 100, y: obst1.position.y)
+            obst1.position = CGPoint(x: obst1.size.width / 50  + 50 + obst1.size.width, y: obst1.position.y)
+            obst2.position = CGPoint(x: self.size.width / 50 - obst2.size.width / 2 - 150, y: obst1.position.y)
             
             addMovement(obstacle: obst1)
             addMovement(obstacle: obst2)

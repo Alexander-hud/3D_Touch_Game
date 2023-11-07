@@ -15,27 +15,38 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     var initalPlayerPosition: CGPoint!
     
-    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        if let touch = touches.first {
-            let maximemPossibleForce = touch.maximumPossibleForce
-            let force = touch.force
-            let normalizedForce = force / maximemPossibleForce
-            
-            player.position.x = (self.size.width / 2) - normalizedForce * (self.size.width / 2 - 25)
-            player2.position.x = (self.size.width / 2) + normalizedForce * (self.size.width / 2 - 25)
-        }
-    }
-    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        resetPlayerPosition()
-    }
-    
-    func resetPlayerPosition() {
-        player.position = initalPlayerPosition
-        player2.position = initalPlayerPosition
+    override func touchesMoved(_ touches: Set<UITouch>,  with event: UIEvent?) {
+        let touch = touches.first
+                if let location = touch?.location(in: self){
+                    if location.x > 0{
+                        let newPoint = player.position.x
+                        player.run(SKAction.moveBy(x: 25, y: 0, duration: 0.1))
+                        player2.run(SKAction.moveBy(x: -25, y: 0, duration: 0.1))
+                    }else{
+                        player.run(SKAction.moveBy(x: -50, y: 0, duration: 0.1))
+                        player2.run(SKAction.moveBy(x: 50, y: 0, duration: 0.1))
+                    }
+
+                }
+   
+        
+        
+        
 
     }
-    
-    
+       
+ 
+    override func touchesEnded(_  touches: Set<UITouch>,   with event: UIEvent?) {
+        resetPlayerPosition()
+//        player.removeAllActions()
+
+       }
+       
+       func resetPlayerPosition() {
+           player.position = initalPlayerPosition
+           player2.position = initalPlayerPosition
+       }
+
     override func didMove(to view: SKView){
         self.physicsWorld.gravity = CGVectorMake(0, 0)
         physicsWorld.contactDelegate = self
@@ -99,6 +110,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             print("GAME OVER")
             // show Game Over Scene
         }
+        
+       
     }
   
    
