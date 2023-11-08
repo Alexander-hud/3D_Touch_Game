@@ -45,6 +45,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         addRow(type: RowType.oneL)
         scene?.scaleMode = .aspectFill
         
+        motionManager.accelerometerUpdateInterval = 0.2
+        motionManager.startAccelerometerUpdates(to: OperationQueue.current!) {(data: CMAccelerometerData?, error : Error? ) in
+            if let acceleromenrData = data {
+                let acceleration = acceleromenrData.acceleration
+                self.xAccelerate = CGFloat(acceleration.x) * 0.75 + self.xAccelerate * 0.25
+            }
+        }
+        
     }
     
     func addRandomRow() {
@@ -102,21 +110,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             print("GAME OVER")
             // show Game Over Scene
             showGameOver()
-            
-            
-            
-            
-            
         }
-        
-        motionManager.accelerometerUpdateInterval = 0.2
-        motionManager.startAccelerometerUpdates(to: OperationQueue.current!) {(data: CMAccelerometerData?, error : Error? ) in
-            if let acceleromenrData = data {
-                let acceleration = acceleromenrData.acceleration
-                self.xAccelerate = CGFloat(acceleration.x) * 0.75 + self.xAccelerate * 0.25
-            }
-        }
-      
         
     }
   

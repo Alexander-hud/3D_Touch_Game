@@ -31,7 +31,7 @@ class GameOverScene: SKScene {
 
         
         let replayMessage = "Replay Game"
-        var replayButton = SKLabelNode(fontNamed: "Optima-ExtraBlack")
+        let replayButton = SKLabelNode(fontNamed: "Optima-ExtraBlack")
         replayButton.text = replayMessage
         replayButton.fontSize = 64
         replayButton.fontColor = SKColor.white
@@ -47,7 +47,7 @@ class GameOverScene: SKScene {
         let touchLocation = touch.location(in: self)
         let touchedNode = self.atPoint(touchLocation)
 
-        if let name = touchedNode.name {
+        if touchedNode.name != nil {
             if let nextScene = GameScene(fileNamed: "GameScene") {
                             nextScene.scaleMode = .aspectFill
                             self.view?.presentScene(nextScene, transition: SKTransition() )
