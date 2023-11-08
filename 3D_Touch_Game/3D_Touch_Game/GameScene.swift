@@ -7,11 +7,12 @@
 
 import SpriteKit
 import CoreMotion
+import AVFoundation
+import GameplayKit
 
 class GameScene: SKScene, SKPhysicsContactDelegate {
     
     var player: SKSpriteNode!
-    var player2: SKSpriteNode!
     
     
     var initalPlayerPosition: CGPoint!
@@ -42,6 +43,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         physicsWorld.contactDelegate = self
         addPlayer()
         addRow(type: RowType.oneL)
+        scene?.scaleMode = .aspectFill
         
     }
     
@@ -101,6 +103,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             // show Game Over Scene
             showGameOver()
             
+            
+            
+            
+            
         }
         
         motionManager.accelerometerUpdateInterval = 0.2
@@ -129,6 +135,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         let gameOverScene = GameOverScene(size: self.size)
         self.view?.presentScene(gameOverScene, transition: transition)
     }
+    
     
     
     

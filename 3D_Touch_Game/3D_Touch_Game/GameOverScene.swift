@@ -8,6 +8,8 @@
 import SpriteKit
 
 class GameOverScene: SKScene {
+    
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
@@ -26,14 +28,51 @@ class GameOverScene: SKScene {
 
         
         addChild(label)
+        ///
+        ///
+        ///
+        ///
+        ///
         
+        let replayMessage = "Replay Game"
+        var replayButton = SKLabelNode(fontNamed: "Optima-ExtraBlack")
+        replayButton.text = replayMessage
+        replayButton.fontSize = 64
+        replayButton.fontColor = SKColor.white
+        replayButton.position = CGPointMake(self.size.width/2, 1000)
+        replayButton.name = "replay"
+        addChild(replayButton)
         
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        let transition = SKTransition.fade(withDuration: 0.5)
-        let gameScene = GameScene(size: self.size)
-        self.view?.presentScene(gameScene, transition: transition)
-    }
+//        let transition = SKTransition.fade(withDuration: 0.5)
+//        let gameScene = GameScene(size: self.size)
+//        self.view?.presentScene(gameScene, transition: transition)
+     
+        let touch = touches.first! as UITouch
+        let touchLocation = touch.location(in: self)
+        let touchedNode = self.atPoint(touchLocation)
+
+        if let name = touchedNode.name {
+            if name == "replay"{
+                let reveal : SKTransition = SKTransition.flipHorizontal(withDuration: 0.5)
+                let scene = GameScene(size: self.size)
+                scene.scaleMode = .aspectFill
+                self.view?.presentScene(scene, transition: reveal)
+            }
+        }
+
+   
+
+        
+        }
+        
+        
+        }
     
-}
+
+        
+
+    
+
