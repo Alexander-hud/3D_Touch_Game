@@ -17,6 +17,7 @@
 		794A9A322AF6C2E90000E7BC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 794A9A302AF6C2E90000E7BC /* LaunchScreen.storyboard */; };
 		794A9A392AF6C6440000E7BC /* GamwElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794A9A382AF6C6440000E7BC /* GamwElements.swift */; };
 		794A9A3D2AF983190000E7BC /* GameOverScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794A9A3C2AF983190000E7BC /* GameOverScene.swift */; };
+		794A9A3F2AFBAB910000E7BC /* Statement.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 794A9A3E2AFBAB910000E7BC /* Statement.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		794A9A312AF6C2E90000E7BC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		794A9A382AF6C6440000E7BC /* GamwElements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamwElements.swift; sourceTree = "<group>"; };
 		794A9A3C2AF983190000E7BC /* GameOverScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverScene.swift; sourceTree = "<group>"; };
+		794A9A3E2AFBAB910000E7BC /* Statement.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Statement.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 		794A9A202AF6C2E70000E7BC /* 3D_Touch_Game */ = {
 			isa = PBXGroup;
 			children = (
+				794A9A3E2AFBAB910000E7BC /* Statement.mp3 */,
 				794A9A212AF6C2E70000E7BC /* AppDelegate.swift */,
 				794A9A232AF6C2E70000E7BC /* GameScene.sks */,
 				794A9A252AF6C2E70000E7BC /* Actions.sks */,
@@ -139,6 +142,7 @@
 				794A9A242AF6C2E70000E7BC /* GameScene.sks in Resources */,
 				794A9A2F2AF6C2E90000E7BC /* Assets.xcassets in Resources */,
 				794A9A322AF6C2E90000E7BC /* LaunchScreen.storyboard in Resources */,
+				794A9A3F2AFBAB910000E7BC /* Statement.mp3 in Resources */,
 				794A9A262AF6C2E70000E7BC /* Actions.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

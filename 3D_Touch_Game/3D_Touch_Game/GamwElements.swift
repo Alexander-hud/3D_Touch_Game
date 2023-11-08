@@ -44,17 +44,7 @@ extension GameScene {
         player.physicsBody?.collisionBitMask = 0
         player.physicsBody?.contactTestBitMask = CollisionBitMask.Obstacle
         
-//        player2 = SKSpriteNode(color: UIColor.red, size: CGSize(width: 50, height: 50))
-//        player2.position = CGPoint(x: self.size.width / 50, y: -850)
-//        player2.name = "PLAYER"
-//        player2.physicsBody?.isDynamic = false
-//        player2.physicsBody = SKPhysicsBody(rectangleOf: player2.size)
-//        player2.physicsBody?.categoryBitMask = CollisionBitMask.Player
-//        player2.physicsBody?.collisionBitMask = 0
-//        player2.physicsBody?.contactTestBitMask = CollisionBitMask.Obstacle
-        
         addChild(player)
-//        addChild(player2)
         
         initalPlayerPosition = player.position
         
