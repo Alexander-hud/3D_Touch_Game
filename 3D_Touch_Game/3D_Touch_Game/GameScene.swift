@@ -99,8 +99,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         if contact.bodyA.node?.name == "PLAYER" {
             print("GAME OVER")
             // show Game Over Scene
+            showGameOver()
             
-        
         }
         
         motionManager.accelerometerUpdateInterval = 0.2
@@ -124,6 +124,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
     }
    
+    func showGameOver() {
+        let transition = SKTransition.fade(withDuration: 0.5)
+        let gameOverScene = GameOverScene(size: self.size)
+        self.view?.presentScene(gameOverScene, transition: transition)
+    }
     
     
     
