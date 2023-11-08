@@ -28,11 +28,7 @@ class GameOverScene: SKScene {
 
         
         addChild(label)
-        ///
-        ///
-        ///
-        ///
-        ///
+
         
         let replayMessage = "Replay Game"
         var replayButton = SKLabelNode(fontNamed: "Optima-ExtraBlack")
@@ -46,24 +42,19 @@ class GameOverScene: SKScene {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-//        let transition = SKTransition.fade(withDuration: 0.5)
-//        let gameScene = GameScene(size: self.size)
-//        self.view?.presentScene(gameScene, transition: transition)
      
         let touch = touches.first! as UITouch
         let touchLocation = touch.location(in: self)
         let touchedNode = self.atPoint(touchLocation)
 
         if let name = touchedNode.name {
-            if name == "replay"{
-                let reveal : SKTransition = SKTransition.flipHorizontal(withDuration: 0.5)
-                let scene = GameScene(size: self.size)
-                scene.scaleMode = .aspectFill
-                self.view?.presentScene(scene, transition: reveal)
-            }
+            if let nextScene = GameScene(fileNamed: "GameScene") {
+                            nextScene.scaleMode = .aspectFill
+                            self.view?.presentScene(nextScene, transition: SKTransition() )
+                        
+                        }
         }
 
-   
 
         
         }
