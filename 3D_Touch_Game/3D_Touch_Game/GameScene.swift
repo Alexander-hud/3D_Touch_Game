@@ -13,7 +13,7 @@ import GameplayKit
 class GameScene: SKScene, SKPhysicsContactDelegate {
     
     var player: SKSpriteNode!
-    
+    var starField: SKEmitterNode!
     
     var initalPlayerPosition: CGPoint!
     
@@ -23,10 +23,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     
     
-    
- 
-       
- 
     override func touchesEnded(_  touches: Set<UITouch>,   with event: UIEvent?) {
         
         resetPlayerPosition()
@@ -39,6 +35,15 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
        }
 
     override func didMove(to view: SKView){
+        
+        starField = SKEmitterNode(fileNamed: "star_cosmo")
+        starField.position = CGPoint(x: 0, y: 1472)
+        starField.advanceSimulationTime(10)
+        self.addChild(starField)
+        
+        starField.zPosition = -1
+        
+        
         self.physicsWorld.gravity = CGVectorMake(0, 0)
         physicsWorld.contactDelegate = self
         addPlayer()
