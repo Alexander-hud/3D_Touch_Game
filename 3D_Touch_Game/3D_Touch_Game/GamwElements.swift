@@ -64,7 +64,7 @@ extension GameScene {
             obstacle.size.width = self.size.width * 0.35
             break
         case .Large:
-            obstacle.size.width = self.size.width * 0.75
+            obstacle.size.width = self.size.width * 0.60
             break
         }
         obstacle.position = CGPoint(x: 0, y: self.size.height + obstacle.size.height)

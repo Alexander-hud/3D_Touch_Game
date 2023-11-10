@@ -14,7 +14,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     var player: SKSpriteNode!
     var starField: SKEmitterNode!
-    
+    var scoreLabel: SKLabelNode!
+    var score: Int = 0 {
+        didSet {
+            scoreLabel.text = "Счет: \(score)"
+        }
+    }
     var initalPlayerPosition: CGPoint!
     
     
@@ -36,6 +41,18 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 
     override func didMove(to view: SKView){
         
+            
+        scoreLabel = SKLabelNode(text: "Счет: 0")
+        scoreLabel.fontName = "Optima-ExtraBlack"
+        scoreLabel.fontSize = 64
+        scoreLabel.fontColor = UIColor.white
+        scoreLabel.position = CGPoint(x: -350 , y: 1000)
+        score = 0
+        
+  
+    
+        self.addChild(scoreLabel)
+        
         starField = SKEmitterNode(fileNamed: "star_cosmo")
         starField.position = CGPoint(x: 0, y: 1472)
         starField.advanceSimulationTime(10)
@@ -43,18 +60,19 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         starField.zPosition = -1
         
+        self.physicsWorld.gravity = CGVector(dx: 0, dy: 0)
         
         self.physicsWorld.gravity = CGVectorMake(0, 0)
         physicsWorld.contactDelegate = self
         addPlayer()
-        addRow(type: RowType.oneL)
+        addRow(type: RowType.threeS)
         scene?.scaleMode = .aspectFill
         
         motionManager.accelerometerUpdateInterval = 0.2
         motionManager.startAccelerometerUpdates(to: OperationQueue.current!) {(data: CMAccelerometerData?, error : Error? ) in
             if let acceleromenrData = data {
                 let acceleration = acceleromenrData.acceleration
-                self.xAccelerate = CGFloat(acceleration.x) * 0.75 + self.xAccelerate * 0.25
+                self.xAccelerate = CGFloat(acceleration.x) * 1 + self.xAccelerate * 0.25
             }
         }
         
@@ -111,13 +129,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             }
     
     func didBegin(_ contact: SKPhysicsContact) {
+        
         if contact.bodyA.node?.name == "PLAYER" {
             print("GAME OVER")
             // show Game Over Scene
             showGameOver()
         }
-        
-    }
+            }
   
     
     override func didSimulatePhysics() {
