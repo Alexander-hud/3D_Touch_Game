@@ -17,6 +17,8 @@ class GameOverScene: SKScene {
     override init(size: CGSize) {
         super.init(size: size)
         
+        
+        
         self.backgroundColor = SKColor.black
         let messagge = "GAME OVER"
         

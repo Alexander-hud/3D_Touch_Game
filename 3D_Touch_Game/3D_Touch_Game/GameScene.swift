@@ -15,11 +15,17 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var player: SKSpriteNode!
     var starField: SKEmitterNode!
     var scoreLabel: SKLabelNode!
+    struct test {
+        var test = "test"
+    }
+    
     var score: Int = 0 {
         didSet {
             scoreLabel.text = "Счет: \(score)"
         }
     }
+
+    
     var initalPlayerPosition: CGPoint!
     
     
@@ -38,7 +44,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
        func resetPlayerPosition() {
            player.position = initalPlayerPosition
        }
-
+  
     override func didMove(to view: SKView){
         
             
@@ -72,7 +78,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         motionManager.startAccelerometerUpdates(to: OperationQueue.current!) {(data: CMAccelerometerData?, error : Error? ) in
             if let acceleromenrData = data {
                 let acceleration = acceleromenrData.acceleration
-                self.xAccelerate = CGFloat(acceleration.x) * 1 + self.xAccelerate * 0.25
+                self.xAccelerate = CGFloat(acceleration.x) * 1.30 + self.xAccelerate * 0.10
             }
         }
         
