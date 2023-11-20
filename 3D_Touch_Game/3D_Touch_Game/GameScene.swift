@@ -15,6 +15,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var player: SKSpriteNode!
     var starField: SKEmitterNode!
     var scoreLabel: SKLabelNode!
+    var playerSize = CGSize(width: 50, height: 50)
+
+    
     struct test {
         var test = "test"
     }
@@ -32,11 +35,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     let motionManager = CMMotionManager()
     var xAccelerate: CGFloat = 0
     
-    
+ 
     
     override func touchesEnded(_  touches: Set<UITouch>,   with event: UIEvent?) {
         
-        resetPlayerPosition()
+//        resetPlayerPosition()
         
 
        }
@@ -55,9 +58,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         scoreLabel.position = CGPoint(x: -350 , y: 1000)
         score = 0
         
-  
-    
         self.addChild(scoreLabel)
+        
+        
+        
+        
         
         starField = SKEmitterNode(fileNamed: "star_cosmo")
         starField.position = CGPoint(x: 0, y: 1472)
@@ -74,15 +79,20 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         addRow(type: RowType.threeS)
         scene?.scaleMode = .aspectFill
         
-        motionManager.accelerometerUpdateInterval = 0.2
-        motionManager.startAccelerometerUpdates(to: OperationQueue.current!) {(data: CMAccelerometerData?, error : Error? ) in
-            if let acceleromenrData = data {
-                let acceleration = acceleromenrData.acceleration
-                self.xAccelerate = CGFloat(acceleration.x) * 1.30 + self.xAccelerate * 0.10
-            }
-        }
+        // MARK: gamePlay object in xAccelerate
+//        motionManager.accelerometerUpdateInterval = 0.2
+//        motionManager.startAccelerometerUpdates(to: OperationQueue.current!) {(data: CMAccelerometerData?, error : Error? ) in
+//            if let acceleromenrData = data {
+//                let acceleration = acceleromenrData.acceleration
+//                self.xAccelerate = CGFloat(acceleration.x) * 0.75 + self.xAccelerate * 0.25
+//            }
+//        }
+       
+    
+       
         
     }
+    
     
     func addRandomRow() {
         let randomNumber = Int(arc4random_uniform(6))
@@ -143,23 +153,31 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
             }
   
-    
-    override func didSimulatePhysics() {
-        player.position.x += xAccelerate * 50
-        if player.position.x < -550 {
-            player.position = CGPoint(x: 550, y: player.position.y)
-        } else if player.position.x  > 550 {
-            player.position = CGPoint(x: -550, y: player.position.y)
-        }
-    }
+    // MARK: gamePlay object in xAccelerate
+//    override func didSimulatePhysics() {
+//        player.position.x += xAccelerate * 50
+//        if player.position.x < -550 {
+//            player.position = CGPoint(x: 550, y: player.position.y)
+//        } else if player.position.x  > 550 {
+//            player.position = CGPoint(x: -550, y: player.position.y)
+//        }
+//    }
    
     func showGameOver() {
         let transition = SKTransition.fade(withDuration: 0.5)
         let gameOverScene = GameOverScene(size: self.size)
         self.view?.presentScene(gameOverScene, transition: transition)
     }
-    
-    
+    // MARK: gamePlay object
+    override func touchesMoved(_ touches: Set<UITouch>, with: UIEvent?) {
+        for touch in touches {
+            let location = touch.location(in: self)
+            let move = SKAction.move(to: location, duration: 0.25)
+            let sequence = SKAction.sequence([move])
+            
+            player.run(sequence)
+        }
+    }
     
     
 }
