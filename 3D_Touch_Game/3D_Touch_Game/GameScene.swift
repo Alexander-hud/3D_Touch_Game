@@ -88,10 +88,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 //            }
 //        }
        
-    
+        
        
         
     }
+    
+    
     
     
     func addRandomRow() {
@@ -119,6 +121,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         default:
             break
         }
+        
     }
     
         var lastUpdateTimeInterval = TimeInterval()

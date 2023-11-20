@@ -17,7 +17,7 @@ class GameOverScene: SKScene {
     override init(size: CGSize) {
         super.init(size: size)
         
-        
+      
         
         self.backgroundColor = SKColor.black
         let messagge = "GAME OVER"
@@ -30,7 +30,7 @@ class GameOverScene: SKScene {
 
         
         addChild(label)
-
+        
         
         let replayMessage = "Replay Game"
         let replayButton = SKLabelNode(fontNamed: "Optima-ExtraBlack")
