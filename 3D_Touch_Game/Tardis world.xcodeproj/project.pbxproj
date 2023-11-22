@@ -27,7 +27,7 @@
 /* Begin PBXFileReference section */
 		793224182AFECBBC00998147 /* star_cosmo.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = star_cosmo.sks; sourceTree = "<group>"; };
 		793224192AFECBBC00998147 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		794A9A1E2AF6C2E70000E7BC /* 3D_Touch_Game.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 3D_Touch_Game.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		794A9A1E2AF6C2E70000E7BC /* Tardis world.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tardis world.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		794A9A212AF6C2E70000E7BC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		794A9A232AF6C2E70000E7BC /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
 		794A9A252AF6C2E70000E7BC /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
@@ -65,7 +65,7 @@
 		794A9A1F2AF6C2E70000E7BC /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				794A9A1E2AF6C2E70000E7BC /* 3D_Touch_Game.app */,
+				794A9A1E2AF6C2E70000E7BC /* Tardis world.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -167,9 +167,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		794A9A1D2AF6C2E70000E7BC /* 3D_Touch_Game */ = {
+		794A9A1D2AF6C2E70000E7BC /* Tardis world */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 794A9A352AF6C2E90000E7BC /* Build configuration list for PBXNativeTarget "3D_Touch_Game" */;
+			buildConfigurationList = 794A9A352AF6C2E90000E7BC /* Build configuration list for PBXNativeTarget "Tardis world" */;
 			buildPhases = (
 				794A9A1A2AF6C2E70000E7BC /* Sources */,
 				794A9A1B2AF6C2E70000E7BC /* Frameworks */,
@@ -179,9 +179,9 @@
 			);
 			dependencies = (
 			);
-			name = 3D_Touch_Game;
+			name = "Tardis world";
 			productName = 3D_Touch_Game;
-			productReference = 794A9A1E2AF6C2E70000E7BC /* 3D_Touch_Game.app */;
+			productReference = 794A9A1E2AF6C2E70000E7BC /* Tardis world.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -199,7 +199,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 794A9A192AF6C2E70000E7BC /* Build configuration list for PBXProject "3D_Touch_Game" */;
+			buildConfigurationList = 794A9A192AF6C2E70000E7BC /* Build configuration list for PBXProject "Tardis world" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -212,7 +212,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				794A9A1D2AF6C2E70000E7BC /* 3D_Touch_Game */,
+				794A9A1D2AF6C2E70000E7BC /* Tardis world */,
 			);
 		};
 /* End PBXProject section */
@@ -452,7 +452,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		794A9A192AF6C2E70000E7BC /* Build configuration list for PBXProject "3D_Touch_Game" */ = {
+		794A9A192AF6C2E70000E7BC /* Build configuration list for PBXProject "Tardis world" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				794A9A332AF6C2E90000E7BC /* Debug */,
@@ -461,7 +461,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		794A9A352AF6C2E90000E7BC /* Build configuration list for PBXNativeTarget "3D_Touch_Game" */ = {
+		794A9A352AF6C2E90000E7BC /* Build configuration list for PBXNativeTarget "Tardis world" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				794A9A362AF6C2E90000E7BC /* Debug */,
