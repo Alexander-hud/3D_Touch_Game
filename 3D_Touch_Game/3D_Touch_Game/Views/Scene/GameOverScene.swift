@@ -9,15 +9,26 @@ import SpriteKit
 
 // MARK: Класс страницы GameOver
 class GameOverScene: SKScene {
-    
+
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
+
     
     override init(size: CGSize) {
         super.init(size: size)
         
         self.backgroundColor = SKColor.black // фон страницы
+        
+        // label счетчик
+        let scoreStatus = "Ваш счет: \(GameScene().score)"
+        let scoreLabel = SKLabelNode(fontNamed: "Optima-ExtraBlack")
+        scoreLabel.text = scoreStatus
+        scoreLabel.fontSize = 86
+        scoreLabel.fontColor = SKColor.white
+        scoreLabel.position = CGPoint(x: self.size.width / 2, y: 1600)
+
+        addChild(scoreLabel)
         
         // label Game Over
         let userStatus = "GAME OVER"

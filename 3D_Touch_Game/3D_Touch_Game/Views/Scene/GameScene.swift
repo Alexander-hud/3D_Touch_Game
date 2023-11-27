@@ -26,7 +26,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var initalPlayerPosition: CGPoint!
     
     // счетчки
-    var score: Int = 0 {
+    var score: Int = 5 {
         didSet {
             scoreLabel.text = "Счет: \(score)"
         }
